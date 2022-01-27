@@ -356,11 +356,7 @@ export default function typesPlugin(_fork: Fork) {
           return builtInCtorTypes[bicfIndex];
         }
 
-        if (typeof name !== "string") {
-          throw new Error("missing name");
-        }
-
-        return new PredicateType(name, value);
+        return new PredicateType(name!, value);
       }
 
       // As a last resort, toType returns a type that matches any value that
